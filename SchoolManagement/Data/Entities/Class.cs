@@ -10,3 +10,5 @@
         public ICollection<Enrollment> Enrollments { get; set; }
         public ICollection<TeacherAssignment> TeacherAssignments { get; set; }
     }
+
+}
