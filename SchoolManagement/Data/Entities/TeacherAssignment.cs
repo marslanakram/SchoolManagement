@@ -11,3 +11,4 @@
         public DateTime AssignmentDate { get; set; }
         public string Schedule { get; set; }
     }
+}

@@ -7,3 +7,4 @@
         public string Specialization { get; set; }
         public ICollection<TeacherAssignment> TeacherAssignments { get; set; }
     }
+}
