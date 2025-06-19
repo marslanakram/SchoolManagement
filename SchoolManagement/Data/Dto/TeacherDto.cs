@@ -2,8 +2,12 @@
 {
     public class TeacherDto
     {
+        public int Id { get; set; }
+
         public string TeacherId { get; set; }
+
         public DateTime HireDate { get; set; }
+
         public string Specialization { get; set; }
     }
 }
