@@ -4,6 +4,8 @@
     {
         public int Id { get; set; }
 
+        public int UserId { get; set; }
+
         public string TeacherId { get; set; }
 
         public DateTime HireDate { get; set; }

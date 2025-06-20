@@ -8,6 +8,8 @@ namespace SchoolManagement.Data.Dto
 
         public string StudentId { get; set; }
 
+        public int UserId { get; set; }
+
         public DateTime EnrollmentDate { get; set; }
 
         public int? CurrentClassId { get; set; }

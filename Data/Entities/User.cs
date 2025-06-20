@@ -12,5 +12,9 @@ namespace SchoolManagement.Data.Entities
         public DateTime DateOfBirth { get; set; }
         public string PasswordHash { get; set; }
         public string Role { get; set; } // Admin, Teacher, Student
+
+        // Navigation properties
+        public Student StudentProfile { get; set; }
+        public Teacher TeacherProfile { get; set; }
     }
 }
