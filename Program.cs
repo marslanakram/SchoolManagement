@@ -15,6 +15,17 @@ using SchoolManagement.Service.StudentService;
 using SchoolManagement.Service.SubjectService;
 using SchoolManagement.Service.UserService;
 using SchoolManagement.Service.JwtService;
+using SchoolManagement.Repository.AttendanceRepository;
+using SchoolManagement.Repository.EnrollmentRepository;
+using SchoolManagement.Repository.GradeRepository;
+using SchoolManagement.Repository.SchoolEventRepository;
+using SchoolManagement.Repository.TeacherAssignmentRepository;
+using SchoolManagement.Service.AttendanceService;
+using SchoolManagement.Service.EnrollmentService;
+using SchoolManagement.Service.GradeService;
+using SchoolManagement.Service.SchoolEventService;
+using SchoolManagement.Service.TeacherAssignmentService;
+using SchoolManagement.Service.TeacherService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -90,12 +101,25 @@ builder.Services.AddScoped<ITeacherRepository, TeacherRepository>();
 builder.Services.AddScoped<ISubjectRepository, SubjectRepository>();
 builder.Services.AddScoped<IClassRepository, ClassRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IAttendanceRepository, AttendanceRepository>();
+builder.Services.AddScoped<IEnrollmentRepository, EnrollmentRepository>();
+builder.Services.AddScoped<IGradeRepository, GradeRepository>();
+builder.Services.AddScoped<ISchoolEventRepository, SchoolEventRepository>();
+builder.Services.AddScoped<ITeacherAssignmentRepository, TeacherAssignmentRepository>();
+
+
 // DependencyInjectionsofService
 builder.Services.AddScoped<ISubjectService, SubjectService>();
 builder.Services.AddScoped<IStudentService, StudentService>();
 builder.Services.AddScoped<IClassService, ClassService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<JwtService>();
+builder.Services.AddScoped<IAttendanceService, AttendanceService>();
+builder.Services.AddScoped<IEnrollmentService, EnrollmentService>();
+builder.Services.AddScoped<IGradeService, GradeService>();
+builder.Services.AddScoped<ISchoolEventService, SchoolEventService>();
+builder.Services.AddScoped<ITeacherAssignmentService, TeacherAssignmentService>();
+builder.Services.AddScoped<ITeacherService, TeacherService>();
 
 
 var app = builder.Build();

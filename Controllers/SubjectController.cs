@@ -1,12 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SchoolManagement.Data.Dto;
 using SchoolManagement.Data.Entities;
 using SchoolManagement.Service.SubjectService;
 
 namespace SchoolManagement.Controllers
 {
-    [Route("api/[controller]")]
+    [Authorize]
     [ApiController]
+    [Route("api/[controller]")]
     public class SubjectController : ControllerBase
     {
         private readonly ISubjectService _subjectservice;
