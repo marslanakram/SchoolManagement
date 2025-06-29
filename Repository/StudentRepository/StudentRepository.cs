@@ -17,7 +17,7 @@ namespace SchoolManagement.Repository.StudentRepository.StudentRepository
         public async Task<Student> GetByStudentIdAsync(string studentId)
         {
             return await _context.Students
-                .FirstOrDefaultAsync(s => s.StudentId == studentId);
+                .FirstOrDefaultAsync(s => s.RollNumber == studentId);
         }
     }
 }

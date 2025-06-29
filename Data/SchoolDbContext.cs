@@ -10,6 +10,9 @@ namespace SchoolManagement.Data
         //  dotnet ef migrations remove
         //  dotnet ef migrations add InitialCreate
         //  dotnet ef database update
+        //dotnet ef migrations add AddGradeLevelAndSectionToClass
+        //Update-Database
+        //dotnet build
 
 
         public SchoolDbContext(DbContextOptions<SchoolDbContext> options) : base(options) { }
@@ -28,13 +31,6 @@ namespace SchoolManagement.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
-            // One-to-one User <-> Student
-            modelBuilder.Entity<Student>()
-                .HasOne(s => s.User)
-                .WithOne(u => u.StudentProfile)
-                .HasForeignKey<Student>(s => s.UserId)
-                .OnDelete(DeleteBehavior.Cascade);
 
             // One-to-one User <-> Teacher
             modelBuilder.Entity<Teacher>()
@@ -59,6 +55,14 @@ namespace SchoolManagement.Data
             modelBuilder.Entity<Attendance>()
                 .HasIndex(a => new { a.StudentId, a.ClassId, a.Date })
                 .IsUnique();
+
+            modelBuilder.Entity<Class>()
+                   .Property(c => c.GradeLevel)
+                   .HasConversion<string>();
+
+            modelBuilder.Entity<Class>()
+                .Property(c => c.Section)
+                .HasConversion<string>();
 
             ApplyGlobalSoftDeleteFilter(modelBuilder);
         }

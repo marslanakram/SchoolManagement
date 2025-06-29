@@ -7,7 +7,7 @@ using SchoolManagement.Service.StudentService;
 
 namespace SchoolManagement.Controllers
 {
-    [Authorize(Roles = "Student")]
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class StudentsController : ControllerBase
